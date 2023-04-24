@@ -4,7 +4,13 @@ import 'package:flutter/material.dart';
 import 'package:ui_13/core/color.dart';
 import 'package:ui_13/data/category_model.dart';
 import 'package:ui_13/data/plant_data.dart';
+import 'package:ui_13/page/Aeropnonics_page.dart';
+import 'package:ui_13/page/Fogponics.dart';
+import 'package:ui_13/page/Hydrophonic.dart';
 import 'package:ui_13/page/details_page.dart';
+import 'package:ui_13/page/flood_watering.dart';
+
+import 'irrigation.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -23,6 +29,54 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    void goToIrrigation(int index) {
+      switch (index + 1) {
+        case 1:
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (builder) => AeroponicsPage(),
+            ),
+          );
+          break;
+        case 2:
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (builder) => HydroponicsPage(),
+            ),
+          );
+          break;
+        case 3:
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (builder) => FogponicsPage(),
+            ),
+          );
+          break;
+        case 4:
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (builder) => FloodIrrigationPage(),
+            ),
+          );
+          break;
+        default:
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (builder) => AeroponicsPage(),
+              // builder: (builder) => HydroponicsPage(),
+              // builder: (builder) => FogponicsPage(),
+              // builder: (builder) => FloodIrrigationPage(),
+            ),
+          );
+          break;
+      }
+    }
+
     return Scaffold(
       backgroundColor: white,
       appBar: AppBar(
@@ -93,7 +147,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                     child: Row(
                       children: [
-                        const Spacer(),
+                        //const Spacer(),
                         const SizedBox(
                           height: 45,
                           width: 250,
@@ -191,7 +245,7 @@ class _HomePageState extends State<HomePage> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    'Popular',
+                    'Methods of watering your Plants ',
                     style: TextStyle(
                       color: black.withOpacity(0.7),
                       fontWeight: FontWeight.bold,
@@ -206,6 +260,9 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
             ),
+            const SizedBox(
+              height: 20,
+            ),
             SizedBox(
               height: 130.0,
               child: ListView.builder(
@@ -214,68 +271,71 @@ class _HomePageState extends State<HomePage> {
                 padding: const EdgeInsets.only(left: 20.0),
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (itemBuilder, index) {
-                  return Container(
-                    width: 200.0,
-                    margin: const EdgeInsets.only(right: 20, bottom: 10),
-                    decoration: BoxDecoration(
-                      color: lightGreen,
-                      boxShadow: [
-                        BoxShadow(
-                          color: green.withOpacity(0.1),
-                          blurRadius: 10,
-                          offset: const Offset(0, 5),
-                        ),
-                      ],
-                      borderRadius: BorderRadius.circular(20.0),
-                    ),
-                    child: Stack(
-                      children: [
-                        Row(
-                          children: [
-                            Image.asset(
-                              populerPlants[index].imagePath,
-                              width: 70,
-                              height: 70,
-                            ),
-                            const SizedBox(width: 10.0),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Text(
-                                  populerPlants[index].name,
-                                  style: TextStyle(
-                                    color: black.withOpacity(0.7),
-                                    fontWeight: FontWeight.w800,
+                  return GestureDetector(
+                    onTap: () => goToIrrigation(index),
+                    child: Container(
+                      width: 200.0,
+                      margin: const EdgeInsets.only(right: 20, bottom: 10),
+                      decoration: BoxDecoration(
+                        color: lightGreen,
+                        boxShadow: [
+                          BoxShadow(
+                            color: green.withOpacity(0.1),
+                            blurRadius: 10,
+                            offset: const Offset(0, 5),
+                          ),
+                        ],
+                        borderRadius: BorderRadius.circular(20.0),
+                      ),
+                      child: Stack(
+                        children: [
+                          Row(
+                            children: [
+                              Image.asset(
+                                populerPlants[index].imagePath,
+                                width: 70,
+                                height: 70,
+                              ),
+                              const SizedBox(width: 10.0),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    populerPlants[index].name,
+                                    style: TextStyle(
+                                      color: black.withOpacity(0.7),
+                                      fontWeight: FontWeight.w800,
+                                    ),
                                   ),
-                                ),
-                                Text(
-                                  // '\$${populerPlants[index].price.toStringAsFixed(0)}',
-                                  "",
-                                  style: TextStyle(
-                                    color: black.withOpacity(0.4),
-                                    fontWeight: FontWeight.w600,
-                                    fontSize: 12.0,
+                                  Text(
+                                    // '\$${populerPlants[index].price.toStringAsFixed(0)}',
+                                    "",
+                                    style: TextStyle(
+                                      color: black.withOpacity(0.4),
+                                      fontWeight: FontWeight.w600,
+                                      fontSize: 12.0,
+                                    ),
                                   ),
-                                ),
-                              ],
-                            )
-                          ],
-                        ),
-                        Positioned(
-                          right: 20,
-                          bottom: 20,
-                          child: CircleAvatar(
-                            backgroundColor: green,
-                            radius: 15,
-                            child: Image.asset(
-                              'assets/icons/add.png',
-                              color: white,
-                              height: 15,
+                                ],
+                              )
+                            ],
+                          ),
+                          Positioned(
+                            right: 20,
+                            bottom: 20,
+                            child: CircleAvatar(
+                              backgroundColor: green,
+                              radius: 15,
+                              child: Image.asset(
+                                'assets/icons/add.png',
+                                color: white,
+                                height: 15,
+                              ),
                             ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   );
                 },

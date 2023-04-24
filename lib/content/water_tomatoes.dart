@@ -3,45 +3,15 @@ import 'package:ui_13/core/color.dart';
 import 'package:ui_13/data/plant_model.dart';
 
 class WaterTomatoesPage extends StatefulWidget {
-  final Plants plant;
   const WaterTomatoesPage({Key? key, required this.plant}) : super(key: key);
-
+  final Plants plant;
   @override
   _WaterTomatoesPageState createState() => _WaterTomatoesPageState();
 }
 
 class _WaterTomatoesPageState extends State<WaterTomatoesPage> {
   final List<Map<String, dynamic>> _sections = [
-    {
-      "title": "Why is watering important?",
-      "content":
-          "Watering is important for  because they need a consistent supply of moisture to grow properly. Without enough water, the plants may become stunted or produce smaller fruit.",
-      "isOpen": false
-    },
-    {
-      "title": "When should you water tomatoes?",
-      "content":
-          "Tomatoes should be watered deeply once or twice a week, depending on weather conditions. During hot, dry weather, they may need to be watered more frequently.",
-      "isOpen": false
-    },
-    {
-      "title": "How much water do tomatoes need?",
-      "content":
-          "Tomatoes need about 1-2 inches of water per week. This can come from rainfall or irrigation. It's important not to overwater, as this can lead to root rot and other problems.",
-      "isOpen": false
-    },
-    {
-      "title": "What is the best way to water tomatoes?",
-      "content":
-          "The best way to water tomatoes is to use a drip irrigation system, so the water goes directly to the roots without wetting the leaves. If you don't have a drip system, you can also use a soaker hose or watering can.",
-      "isOpen": false
-    },
-    {
-      "title": "What are some common watering mistakes to avoid?",
-      "content":
-          "Common watering mistakes to avoid include watering too often, watering too little, watering from above (which can lead to fungal diseases), and watering during the heat of the day (which can lead to water loss through evaporation).",
-      "isOpen": false
-    },
+    {"title": "Why is watering important?", "content": "", "isOpen": true},
   ];
 
   @override
@@ -114,7 +84,7 @@ class _WaterTomatoesPageState extends State<WaterTomatoesPage> {
                             vertical: 8.0,
                           ),
                           child: Text(
-                            _sections[index]['content'],
+                            '${widget.plant.watering}',
                             style: const TextStyle(fontSize: 16.0),
                           ),
                         ),

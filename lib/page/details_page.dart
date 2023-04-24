@@ -110,7 +110,7 @@ class DetailsPage extends StatelessWidget {
                         ),
                         const SizedBox(height: 20.0),
                         Text(
-                          'Treatment',
+                          'Health Benefits',
                           style: TextStyle(
                             color: black.withOpacity(0.9),
                             fontSize: 18.0,
@@ -136,7 +136,7 @@ class DetailsPage extends StatelessWidget {
                         const SizedBox(height: 20.0),
                         RichText(
                           text: TextSpan(
-                            text: plant.description,
+                            text: plant.healthbenefit,
                             style: TextStyle(
                               color: black.withOpacity(0.5),
                               fontSize: 15.0,

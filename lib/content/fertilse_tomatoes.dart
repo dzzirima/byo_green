@@ -33,7 +33,7 @@ class FertilizingTomatoesPage extends StatelessWidget {
                     bottomLeft: Radius.circular(60),
                     bottomRight: Radius.circular(60),
                   ),
-                  image: DecorationImage(
+                  image: const DecorationImage(
                     image: AssetImage("assets/images/tomato.jpg"),
                     fit: BoxFit.cover,
                   ),
