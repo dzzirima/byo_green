@@ -1,6 +1,7 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:ui_13/core/color.dart';
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:ui_13/widgets/bottom_nav.dart';
 
 class SplashPage extends StatelessWidget {
@@ -13,24 +14,48 @@ class SplashPage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           const SizedBox(height: 25),
-          const Text(
-            'Let\'s plant with us',
-            style: TextStyle(
-              fontSize: 22.0,
-              letterSpacing: 1.8,
-              fontWeight: FontWeight.w900,
+          // const Text(
+          //   'Let\'s plant with us',
+          //   style: TextStyle(
+          //     fontSize: 22.0,
+          //     letterSpacing: 1.8,
+          //     fontWeight: FontWeight.w900,
+          //   ),
+          // ),
+          Text.rich(
+            TextSpan(
+              text: 'Let\'s plant With ',
+              style: TextStyle(
+                fontSize: 22.0,
+                letterSpacing: 1.8,
+                fontWeight: FontWeight.w900,
+              ),
+              children: <TextSpan>[
+                TextSpan(
+                  text: 'BYOGREEN',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: green,
+                  ),
+                ),
+              ],
             ),
           ),
+
           const SizedBox(height: 5),
-          const Text(
-            'Bring nature home',
-            style: TextStyle(
-              color: grey,
-              fontSize: 16,
-              letterSpacing: 1.8,
-              fontWeight: FontWeight.w600,
+          AnimatedTextKit(repeatForever: true, animatedTexts: [
+            TypewriterAnimatedText(
+              "Bring nature home !",
+              textAlign: TextAlign.center,
+              textStyle: const TextStyle(
+                color: green,
+                fontSize: 16,
+                letterSpacing: 1.8,
+                fontWeight: FontWeight.w600,
+              ),
             ),
-          ),
+          ]),
+
           SizedBox(
             height: 450,
             width: 450,
@@ -54,7 +79,7 @@ class SplashPage extends StatelessWidget {
                 borderRadius: BorderRadius.circular(10.0),
               ),
               child: const Text(
-                'Sign In',
+                'Let Go',
                 style: TextStyle(
                   color: white,
                   fontSize: 16,
@@ -63,29 +88,29 @@ class SplashPage extends StatelessWidget {
               ),
             ),
           ),
-          TextButton(
-            onPressed: () {},
-            child: Text(
-              'Create an account',
-              style: TextStyle(
-                color: black.withOpacity(0.7),
-                fontSize: 16,
-                letterSpacing: 1,
-                fontWeight: FontWeight.w600,
-              ),
-            ),
-          ),
-          TextButton(
-            onPressed: () {},
-            child: Text(
-              'Forgot Password?',
-              style: TextStyle(
-                color: black.withOpacity(0.4),
-                letterSpacing: 1,
-                fontWeight: FontWeight.w600,
-              ),
-            ),
-          ),
+          // TextButton(
+          //   onPressed: () {},
+          //   child: Text(
+          //     'Create an account',
+          //     style: TextStyle(
+          //       color: black.withOpacity(0.7),
+          //       fontSize: 16,
+          //       letterSpacing: 1,
+          //       fontWeight: FontWeight.w600,
+          //     ),
+          //   ),
+          // ),
+          // TextButton(
+          //   onPressed: () {},
+          //   child: Text(
+          //     'Forgot Password?',
+          //     style: TextStyle(
+          //       color: black.withOpacity(0.4),
+          //       letterSpacing: 1,
+          //       fontWeight: FontWeight.w600,
+          //     ),
+          //   ),
+          // ),
         ],
       ),
     );

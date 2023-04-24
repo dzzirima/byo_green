@@ -34,7 +34,7 @@ class TransportingTomatoesPage extends StatelessWidget {
                     bottomRight: Radius.circular(60),
                   ),
                   image: DecorationImage(
-                    image: AssetImage("assets/images/tomato.jpg"),
+                    image: AssetImage("assets/images/tomato.png"),
                     fit: BoxFit.cover,
                   ),
                 ),

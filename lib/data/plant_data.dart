@@ -2,9 +2,28 @@ import 'package:ui_13/data/plant_model.dart';
 
 List<Plants> plants = [
   Plants(
+    id: 3,
+    name: 'Tomatoes',
+    imagePath: 'assets/images/tomato.png',
+    category: 'Garden',
+    description:
+        "Tomatoes are a nutritious fruit that are low in calories and high in nutrients like vitamin C and potassium. They're also rich in antioxidants, including lycopene, which is associated with reduced risk of heart disease and certain cancers.",
+    price: 40.00,
+    isFavorit: true,
+    healthbenefit:
+        "Tomatoes provide important nutrients like vitamin C and potassium, and are rich in antioxidants including lycopene, which is linked to reduced risk of heart disease and certain cancers. Other potential benefits may include protecting brain health, combating metabolic syndromes, protecting heart health, preventing constipation, aiding immune function and supporting male fertility.",
+    watering:
+        "Water tomatoes slowly and deeply, using drip irrigation if possible. Water regularly, depending on factors like temperature and growth stage. Water at the roots, and use mulch to slow down evaporation. Improper watering can lead to problems like blossom end rot, stunted growth, reduced fruit production, and root loss.",
+    fertilise:
+        "Fertilize tomato plants when planting them in the garden and then once every one to two weeks after the plants start producing fruit. Mix the fertilizer with soil and avoid fertilizing too close to the plant to prevent burning.",
+    pestcontrol:
+        "Effective pest control methods for tomatoes include tomato spray for killing aphids and mites, hot pepper spray for mites and whiteflies, simple soap spray for various pests, citrus rinds to reduce pests, newspaper earwig traps, ground cinnamon or cayenne pepper to deter pests, and baking soda spray for powdery mildew. Vinegar can also be used to get rid of weeds, but caution should be taken to avoid harming other plants.",
+    transplant: "",
+  ),
+  Plants(
     id: 0,
     name: 'Covo',
-    imagePath: 'assets/images/tomato.jpg',
+    imagePath: 'assets/images/covo.jpg',
     category: 'Garden',
     description:
         "Covo is a traditional leafy green vegetable that is a staple in Zimbabwean cuisine. It is commonly "
@@ -85,7 +104,7 @@ List<Plants> plants = [
         "when growing beans aeroponically on a tower. Fogponics is an aeroponic technique.",
     id: 1,
     name: 'Green beans',
-    imagePath: 'assets/images/tomato.jpg',
+    imagePath: 'assets/images/green_beans.jpg',
     category: 'Garden',
     description:
         "Green beans are the immature fruit of the common bean plant and are typically green in color. They "
@@ -143,7 +162,7 @@ List<Plants> plants = [
   Plants(
       id: 4,
       name: 'Rape',
-      imagePath: 'assets/images/rape.jpg',
+      imagePath: 'assets/images/rape.png',
       category: 'Garden',
       description:
           "Rape is a nutritionally balanced vegetable that is high in vitamins and minerals such as "
@@ -183,28 +202,9 @@ List<Plants> plants = [
           "dig holes in the garden bed that are slightly larger than the root ball of each seedling. Place the "
           "seedlings in the holes and gently firm the soil around them. Water thoroughly after transplanting."),
   Plants(
-    id: 3,
-    name: 'Tomatoes',
-    imagePath: 'assets/images/tomatoes.jpg',
-    category: 'Garden',
-    description:
-        "Tomatoes are a nutritious fruit that are low in calories and high in nutrients like vitamin C and potassium. They're also rich in antioxidants, including lycopene, which is associated with reduced risk of heart disease and certain cancers.",
-    price: 40.00,
-    isFavorit: true,
-    healthbenefit:
-        "Tomatoes provide important nutrients like vitamin C and potassium, and are rich in antioxidants including lycopene, which is linked to reduced risk of heart disease and certain cancers. Other potential benefits may include protecting brain health, combating metabolic syndromes, protecting heart health, preventing constipation, aiding immune function and supporting male fertility.",
-    watering:
-        "Water tomatoes slowly and deeply, using drip irrigation if possible. Water regularly, depending on factors like temperature and growth stage. Water at the roots, and use mulch to slow down evaporation. Improper watering can lead to problems like blossom end rot, stunted growth, reduced fruit production, and root loss.",
-    fertilise:
-        "Fertilize tomato plants when planting them in the garden and then once every one to two weeks after the plants start producing fruit. Mix the fertilizer with soil and avoid fertilizing too close to the plant to prevent burning.",
-    pestcontrol:
-        "Effective pest control methods for tomatoes include tomato spray for killing aphids and mites, hot pepper spray for mites and whiteflies, simple soap spray for various pests, citrus rinds to reduce pests, newspaper earwig traps, ground cinnamon or cayenne pepper to deter pests, and baking soda spray for powdery mildew. Vinegar can also be used to get rid of weeds, but caution should be taken to avoid harming other plants.",
-    transplant: "",
-  ),
-  Plants(
     id: 6,
     name: 'Strawberries',
-    imagePath: 'assets/images/strawberries.jpg',
+    imagePath: 'assets/images/strawberry.jpg',
     category: 'Garden',
     description:
         'Strawberries are an edible juicy red fruit of a low growing herb with white flowers and long slender runners. They belong to the Rosacea family and have a short harvesting season in the spring. Strawberries are packed with vitamins, fiber, and antioxidants, and may help prevent the formation of some diseases, reduce glucose levels, and protect the skin. They also help in the management of osteoarthritis by strengthening joints.',
