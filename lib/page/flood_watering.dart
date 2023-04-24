@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:ui_13/core/color.dart';
+import 'package:ui_13/data/plant_data.dart';
 
 class FloodIrrigationPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    var height = MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: AppBar(
         title: Text('Flood Irrigation'),
@@ -11,6 +14,27 @@ class FloodIrrigationPage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            Container(
+              height: height / 3,
+              decoration: BoxDecoration(
+                color: lightGreen,
+                boxShadow: [
+                  BoxShadow(
+                    color: green.withOpacity(0.2),
+                    blurRadius: 15,
+                    offset: const Offset(0, 5),
+                  ),
+                ],
+                borderRadius: const BorderRadius.only(
+                  bottomLeft: Radius.circular(60),
+                  bottomRight: Radius.circular(60),
+                ),
+                image: DecorationImage(
+                  image: AssetImage('${populerPlants[3].imagePath}'),
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
             ListTile(
               title: Text('What is Flood Irrigation?'),
               subtitle: Text(

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:ui_13/core/color.dart';
+import 'package:ui_13/data/plant_data.dart';
 
 class AeroponicsPage extends StatefulWidget {
   @override
@@ -13,6 +15,7 @@ class _AeroponicsPageState extends State<AeroponicsPage> {
 
   @override
   Widget build(BuildContext context) {
+    var height = MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: AppBar(
         title: Text('Aeroponics'),
@@ -21,6 +24,28 @@ class _AeroponicsPageState extends State<AeroponicsPage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
+            Container(
+              height: height / 3,
+              decoration: BoxDecoration(
+                color: lightGreen,
+                boxShadow: [
+                  BoxShadow(
+                    color: green.withOpacity(0.2),
+                    blurRadius: 15,
+                    offset: const Offset(0, 5),
+                  ),
+                ],
+                borderRadius: const BorderRadius.only(
+                  bottomLeft: Radius.circular(60),
+                  bottomRight: Radius.circular(60),
+                ),
+                image: DecorationImage(
+                  image: AssetImage('${populerPlants[0].imagePath}'),
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
+            const Divider(),
             ListTile(
               title: Text('What is Aeroponics?'),
               subtitle: Text(
